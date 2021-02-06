@@ -156,7 +156,7 @@ When we add the following amidst the declarations of middlewares
 app.use(express.static('build'))
 ```
 
-whenever express gets an HTTP GET request it will first check if the <i>build</i> directory contains a file corresponding to the request's address. If a correct file is found, express will return it. 
+whenever express gets an HTTP GET request it will first check if the <i>build</i> directory contains a file corresponding to the request's address. If a correct file is found, express will return it. Note that you should add this after `app.use(cors())`, otherwise it won't work.
 
 Now HTTP GET requests to the address <i>www.serversaddress.com/index.html</i> or <i>www.serversaddress.com</i> will show the React frontend. GET requests to the address <i>www.serversaddress.com/api/notes</i> will be handled by the backend's code.
 
